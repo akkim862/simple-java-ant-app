@@ -1,0 +1,8 @@
+- hosts: appservers
+  become: yes
+  tasks:
+    - name: Stop old container
+      command: docker rm -f javaapp
+      ignore_errors: yes
+    - name: Run new container
+      command: docker run -d --name javaapp simple-java-ant-app:latest
