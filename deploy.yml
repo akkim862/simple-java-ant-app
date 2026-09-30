@@ -1,5 +1,4 @@
 - hosts: appservers
-  become: yes
   tasks:
     - name: Stop old container
       command: docker rm -f javaapp
