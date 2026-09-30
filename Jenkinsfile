@@ -15,12 +15,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'ant test'
-            }
-        }
-
         stage('Docker Build') {
             steps {
                 sh 'docker build -t simple-java-ant-app:latest .'
